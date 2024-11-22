@@ -4,52 +4,41 @@ let turn = "p1";
 let winner = "none";
 let score = 0;
 
+const table = ["cisor", "rock", "paper"];
 const paper = document.getElementById("paper");
 const rock = document.getElementById("rock");
 const cisor = document.getElementById("cisor");
 const scoree = document.getElementById("score");
 
 cisor.addEventListener("click", (event) => {
-	if (turn == "p1") {
-		p1Choice = "cisor";
-		turn = "p2";
-		console.log("p1: " + p1Choice);
-		// cisor();
-	} else {
-		p2Choice = "cisor";
-		console.log("p2: " + p2Choice);
-		// cisor();
-		play();
-	}
+	p1Choice = "cisor";
+	console.log("p1: " + p1Choice);
+	let i = Math.floor(Math.random() * table.length);
+	p2Choice = table[i];
+	console.log(p2Choice);
+	// cisor();
+	play();
 });
 
 rock.addEventListener("click", (event) => {
-	if (turn == "p1") {
-		p1Choice = "rock";
-		turn = "p2";
-		console.log("p1: " + p1Choice);
-		// rock();
-	} else {
-		p2Choice = "rock";
-		console.log("p2: " + p2Choice);
-		// rock();
+	p1Choice = "rock";
+	console.log("p1: " + p1Choice);
+	let i = Math.floor(Math.random() * table.length);
+	p2Choice = table[i];
+	console.log(p2Choice);
+	// rock();
 
-		play();
-	}
+	play();
 });
 paper.addEventListener("click", (event) => {
-	if (turn == "p1") {
-		p1Choice = "paper";
-		turn = "p2";
-		console.log("p1: " + p1Choice);
-		// paper();
-	} else {
-		p2Choice = "paper";
-		console.log("p2: " + p2Choice);
-		// paper();
+	p1Choice = "paper";
+	console.log("p1: " + p1Choice);
+	let i = Math.floor(Math.random() * table.length);
+	p2Choice = table[i];
+	console.log(p2Choice);
+	// paper();
 
-		play();
-	}
+	play();
 });
 
 // function paper{
@@ -89,7 +78,6 @@ function play() {
 		p1Choice = "none";
 		p1Choice = "none";
 		turn = "p1";
-		score++;
 		scoree.innerHTML = score;
 	} else {
 		console.log("wtf ??");
